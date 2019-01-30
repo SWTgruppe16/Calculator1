@@ -18,9 +18,9 @@ namespace Calculator
             return a - b;
         }
 
-        public double Multiply(double a, double b)
+        public double Multiply(double a, double c)
         {
-            return a * b; 
+            return a * c; 
         }
 
         public double Power(double x, double exp)
