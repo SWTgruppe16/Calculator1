@@ -4,16 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using NUnit.Framework.Internal;
+using Calculator;
 
 namespace CalculatorUnitTest
 {
         [TestFixture]
+        
         public class CalculatorUnitTest
         {
+            private Calculator.Calculator calculator;
+
+           [SetUp]
+           public void Setup()
+            {
+              calculator = new Calculator.Calculator();
+
+            }
+
             [Test]
             public void Add_Add2to4_Returns6()
             {
-                var uut = new Calculator.Calculator();
+                var uut = calculator; 
 
                 Assert.That(uut.Add(2, 4), Is.EqualTo(6));
             }
@@ -21,7 +33,7 @@ namespace CalculatorUnitTest
             [Test]
             public void Add_AddMinus2and4_Returns2()
             {
-                var uut = new Calculator.Calculator();
+                var uut = calculator;
 
                 Assert.That(uut.Add(-2, 4), Is.EqualTo(2));
             }
@@ -29,23 +41,23 @@ namespace CalculatorUnitTest
             [Test]
             public void Subtract_Subtract2from4_Returns2()
             {
-                var uut = new Calculator.Calculator();
+                 var uut = calculator;
 
-                Assert.That(uut.Subtract(4, 2), Is.EqualTo(2));
+                 Assert.That(uut.Subtract(4, 2), Is.EqualTo(2));
             }
 
             [Test]
             public void Subtract_Subtract5from4_ReturnsNegative1()
             {
-                var uut = new Calculator.Calculator();
+                  var uut = calculator;   
 
-                Assert.That(uut.Subtract(4, 5), Is.EqualTo(-1));
+                  Assert.That(uut.Subtract(4, 5), Is.EqualTo(-1));
             }
 
             [Test]
             public void Multiply_Multiply5times5_Return25()
             {
-                var uut = new Calculator.Calculator();
+                var uut = calculator;
 
                 Assert.That(uut.Multiply(5, 5), Is.EqualTo(25));
             }
@@ -54,7 +66,7 @@ namespace CalculatorUnitTest
             [Test]
             public void Multiply_Multiply5timesNegative5_ReturnNegative25()
             {
-                var uut = new Calculator.Calculator();
+                var uut = calculator;
 
                 Assert.That(uut.Multiply(5, -5), Is.EqualTo(-25));
             }
@@ -62,7 +74,7 @@ namespace CalculatorUnitTest
             [Test]
             public void Power_Power2times2_Return4()
             {
-                var uut = new Calculator.Calculator();
+                var uut = calculator;
 
                 Assert.That(uut.Power(2, 2), Is.EqualTo(4));
             }
@@ -70,7 +82,7 @@ namespace CalculatorUnitTest
             [Test]
             public void Power_Power2times5_Returns32()
             {
-                var uut = new Calculator.Calculator();
+                var uut = calculator;
 
                 Assert.That(uut.Power(2, 5), Is.EqualTo(32));
             }
@@ -80,7 +92,7 @@ namespace CalculatorUnitTest
             [Test]
             public void Divide_Divide4by2_Returns2()
             {
-                var uut = new Calculator.Calculator();
+                var uut = calculator;   
 
                 Assert.That(uut.Divide(4, 2), Is.EqualTo(2));
             }
@@ -88,19 +100,28 @@ namespace CalculatorUnitTest
             [Test]
             public void Divide_Dividenegative4by2_ReturnsNegative2()
             {
-                var uut = new Calculator.Calculator();
+                var uut = calculator;
 
-                Assert.That(uut.Divide(-4, 2), Is.EqualTo(-2));
+                 Assert.That(uut.Divide(-4, 2), Is.EqualTo(-2));
             }
 
             [Test]
             public void Divide_Dividenegative4byNegative2_Returns2()
             {
-                var uut = new Calculator.Calculator();
-
+                 var uut = calculator;   
+    
                 Assert.That(uut.Divide(-4, -2), Is.EqualTo(2));
             }
 
+        //[Test]
+        //public void Divide_DivideByZero()
+        //{
+        //    var uut = calculator;
+
+        //    Assert.Throws<Exception>(() => calculator.Divide(2, 0));
+        //}
+
+        
 
 
 
