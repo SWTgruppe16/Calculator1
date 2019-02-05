@@ -6,6 +6,14 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
+
+    //public class Exeption : Exception
+    //{
+    //    public double Number;
+
+    //    public Exeption(double no) => Number = no;
+    //}
+
     public class Calculator
     {
         public double Add(double a, double b)
@@ -28,6 +36,10 @@ namespace Calculator
             return Math.Pow(x, exp);
         }
 
+        public double Divide(double dividend, double divisor)
+        {
+                return dividend / divisor;
+        }
 
 
     }

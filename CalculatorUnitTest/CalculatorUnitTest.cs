@@ -77,7 +77,31 @@ namespace CalculatorUnitTest
 
             // hvis der skal ingå en acceptabel varriabel kan kan skrive(resultat).within(0.01));
 
-         
+            [Test]
+            public void Divide_Divide4by2_Returns2()
+            {
+                var uut = new Calculator.Calculator();
+
+                Assert.That(uut.Divide(4, 2), Is.EqualTo(2));
+            }
+
+            [Test]
+            public void Divide_Dividenegative4by2_ReturnsNegative2()
+            {
+                var uut = new Calculator.Calculator();
+
+                Assert.That(uut.Divide(-4, 2), Is.EqualTo(-2));
+            }
+
+            [Test]
+            public void Divide_Dividenegative4byNegative2_Returns2()
+            {
+                var uut = new Calculator.Calculator();
+
+                Assert.That(uut.Divide(-4, -2), Is.EqualTo(2));
+            }
+
+
 
 
 
