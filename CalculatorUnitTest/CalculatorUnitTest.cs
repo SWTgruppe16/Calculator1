@@ -48,8 +48,8 @@ namespace CalculatorUnitTest
 
 
         //Test Subtract With Different Values
-            [TestCase(2,4,2)]
-            [TestCase(5,4,-1)]
+            [TestCase(2,4,-2)]
+            [TestCase(4,5,-1)]
             [TestCase(-2,-2,0)]
             public void Ted_Subtract_WithDifferentValues(double a, double b, double result)
             {
